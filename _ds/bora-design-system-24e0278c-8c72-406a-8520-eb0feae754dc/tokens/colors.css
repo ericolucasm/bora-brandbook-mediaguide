@@ -1,0 +1,106 @@
+/* ============================================================
+   BORA · Color Tokens
+   ------------------------------------------------------------
+   Brand palette (from BORA Identidade Visual 2026):
+     Navy Profundo  #1A2234  · authority / dark surfaces  · 60%
+     Cream Off-white#F5F0E8  · light sections / breathing  · 25%
+     Laranja BORA   #E8622A  · CTA / logo / highlight       · 10%
+     Âmbar Acento   #F4A01C  · secondary highlight / hover  · 5%
+     Verde Resultado#2D9E6B  · delivery / success           · 5%
+   Tints & shades derived in oklch to stay harmonious.
+   ============================================================ */
+
+:root {
+  /* ---------- Brand: Orange (Laranja BORA) ---------- */
+  --orange-50:  #fdf1ea;
+  --orange-100: #fbdcc9;
+  --orange-200: #f6b896;
+  --orange-300: #f0915f;
+  --orange-400: #ec7642;
+  --orange-500: #e8622a;  /* DEFAULT · Laranja BORA */
+  --orange-600: #d2511d;
+  --orange-700: #ad4117;
+  --orange-800: #863316;
+  --orange-900: #5e2613;
+
+  /* Coral — brighter, energetic variant (posts, accents) */
+  --coral: #ff4f2b;
+
+  /* ---------- Amber (Âmbar Acento) ---------- */
+  --amber-100: #fde9c4;
+  --amber-300: #f8c25e;
+  --amber-400: #f6ae35;
+  --amber-500: #f4a01c;  /* DEFAULT · Âmbar */
+  --amber-600: #d9870c;
+
+  /* ---------- Green (Verde Resultado) ---------- */
+  --green-100: #cdeada;
+  --green-300: #6cc298;
+  --green-500: #2d9e6b;  /* DEFAULT · Verde Resultado */
+  --green-600: #228056;
+  --green-700: #19613f;
+
+  /* ---------- Navy (authority / dark surfaces) ---------- */
+  --navy-900: #0d1520;   /* deepest — hero floors, footers */
+  --navy-800: #141c2c;
+  --navy-700: #1a2234;   /* DEFAULT · Navy Profundo */
+  --navy-600: #283246;
+  --navy-500: #3a465e;
+  --navy-400: #586480;
+  --navy-300: #8a9aab;   /* muted text on navy */
+  --navy-200: #b6c0cc;
+
+  /* ---------- Cream / neutrals (light surfaces) ---------- */
+  --cream:      #f5f0e8;  /* DEFAULT · Cream Off-white */
+  --cream-deep: #ece4d6;  /* cards / dividers on cream */
+  --paper:      #faf7f2;  /* lightest page bg */
+  --white:      #ffffff;
+  --ink-900:    #1a2234;  /* body text on light = navy */
+  --ink-700:    #3f4654;
+  --ink-500:    #6b7280;
+  --ink-line:   #e6e0d6;  /* hairline borders on light */
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components
+     ============================================================ */
+
+  /* Brand */
+  --brand:            var(--orange-500);
+  --brand-strong:     var(--orange-600);
+  --brand-soft:       var(--orange-50);
+  --brand-contrast:   var(--white);
+
+  /* Surfaces */
+  --surface-page:     var(--paper);
+  --surface-cream:    var(--cream);
+  --surface-card:     var(--white);
+  --surface-dark:     var(--navy-700);
+  --surface-darker:   var(--navy-900);
+  --surface-inset:    #f0ebe2;
+
+  /* Text */
+  --text-strong:      var(--ink-900);
+  --text-body:        var(--ink-700);
+  --text-muted:       var(--ink-500);
+  --text-on-dark:     #f3f1ec;
+  --text-on-dark-mut: var(--navy-300);
+  --text-brand:       var(--orange-600);
+  --text-on-brand:    var(--white);
+
+  /* Lines & borders */
+  --border-subtle:    var(--ink-line);
+  --border-strong:    #d8d0c2;
+  --border-on-dark:   rgba(255, 255, 255, 0.10);
+
+  /* Feedback */
+  --success:          var(--green-500);
+  --success-soft:     var(--green-100);
+  --warning:          var(--amber-500);
+  --warning-soft:     var(--amber-100);
+  --info:             var(--navy-500);
+  --danger:           var(--coral);
+  --danger-soft:      #ffe1d9;
+
+  /* Focus ring */
+  --focus-ring:       color-mix(in srgb, var(--orange-500) 55%, transparent);
+}

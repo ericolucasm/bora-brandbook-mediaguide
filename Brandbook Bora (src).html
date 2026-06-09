@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brandbook · Bora</title>
+
+<!-- code-referenced logo assets (lifted for the offline bundler) -->
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-lockup-horizontal-color.png" data-resource-id="lockupColor" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-lockup-horizontal-navy.png" data-resource-id="lockupNavy" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-lockup-horizontal-orange.png" data-resource-id="lockupOrange" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-lockup-horizontal-white.png" data-resource-id="lockupWhite" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-lockup-stacked-color.png" data-resource-id="lockupStacked" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-lockup-stacked-white.png" data-resource-id="lockupStackedWhite" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-mark-color.png" data-resource-id="markColor" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-mark-navy.png" data-resource-id="markNavy" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-mark-orange.png" data-resource-id="markOrange" />
+<meta name="ext-resource-dependency" content="assets/brand-kit/logo/bora-mark-white.png" data-resource-id="markWhite" />
+<meta name="ext-resource-dependency" content="assets/logo-versions/bora-mark-amber.png" data-resource-id="markAmber" />
+
+<!-- Bora Design System tokens + bundle -->
+<link rel="stylesheet" href="_ds/bora-design-system-24e0278c-8c72-406a-8520-eb0feae754dc/tokens/fonts.css" />
+<link rel="stylesheet" href="_ds/bora-design-system-24e0278c-8c72-406a-8520-eb0feae754dc/tokens/colors.css" />
+<link rel="stylesheet" href="_ds/bora-design-system-24e0278c-8c72-406a-8520-eb0feae754dc/tokens/typography.css" />
+<link rel="stylesheet" href="_ds/bora-design-system-24e0278c-8c72-406a-8520-eb0feae754dc/tokens/spacing.css" />
+<link rel="stylesheet" href="_ds/bora-design-system-24e0278c-8c72-406a-8520-eb0feae754dc/tokens/base.css" />
+<link rel="stylesheet" href="_ds/bora-design-system-24e0278c-8c72-406a-8520-eb0feae754dc/styles.css" />
+
+<link rel="stylesheet" href="brandbook.css" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="_ds/bora-design-system-24e0278c-8c72-406a-8520-eb0feae754dc/_ds_bundle.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#131A28">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#131A28"/>
+    <g transform="translate(480,250)">
+      <rect x="0" y="0" width="240" height="300" rx="56" fill="#E8622A"/>
+      <path d="M70 250 L70 70 L140 70 a60 60 0 0 1 0 120 L70 190" fill="none" stroke="#131A28" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M58 210 L150 118 M150 118 L150 168 M150 118 L100 118" fill="none" stroke="#F4A01C" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="600" y="640" font-family="Syne, sans-serif" font-weight="800" font-size="84" fill="#F3F1EC" text-anchor="middle" letter-spacing="4">BORA</text>
+    <text x="600" y="700" font-family="DM Sans, sans-serif" font-size="28" fill="#8C97A8" text-anchor="middle" letter-spacing="6">BRANDBOOK</text>
+  </svg>
+</template>
+
+<div id="root"></div>
+
+<script type="text/babel" src="bb-part1.standalone.jsx"></script>
+<script type="text/babel" src="bb-part2.jsx"></script>
+<script type="text/babel">
+const {
+  Cover, Contents, Brand, Logo, Versions, Protection,
+  Color, Typography, Voice, Texture, Icons, Components, Applications, Closing,
+} = window;
+
+function Brandbook() {
+  return (
+    <div className="doc">
+      <Cover />
+      <Contents />
+      <Brand />
+      <Logo />
+      <Versions />
+      <Protection />
+      <Color />
+      <Typography />
+      <Voice />
+      <Texture />
+      <Icons />
+      <Components />
+      <Applications />
+      <Closing />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Brandbook />);
+</script>
+</body>
+</html>
