@@ -119,7 +119,7 @@ function Brand() {
         <div style={{ display: "grid", gap: 16 }}>
           <div style={{ background: "var(--white)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: 30 }}>
             <Eyebrow>Missão</Eyebrow>
-            <p style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 26, lineHeight: 1.2, margin: "12px 0 0" }}>
+            <p style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 26, lineHeight: 1.2, margin: "12px 0 0" }}>
               Ajudar times a sair do caos <span style={{ color: "var(--orange-500)" }}>›</span> e entregar com consistência.
             </p>
           </div>
