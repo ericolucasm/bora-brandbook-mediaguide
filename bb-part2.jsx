@@ -81,25 +81,25 @@ function Color() {
 function Typography() {
   const scale = [
     ["Display · 88px", 88, "Bora pra cima"],
-    ["H1 · Syne 800 · 52px", 52, "Gestão que funciona"],
-    ["H2 · Syne 700 · 28px", 28, "Clareza e estrutura"],
-    ["H3 · Syne 700 · 22px", 22, "Do caos à entrega"],
+    ["H1 · Syne 600 · 52px", 52, "Gestão que funciona"],
+    ["H2 · Syne 600 · 28px", 28, "Clareza e estrutura"],
+    ["H3 · Syne 600 · 22px", 22, "Do caos à entrega"],
   ];
   return (
     <section className="page page--paper" id="tipografia">
       <SecHead n="06" eyebrow="Tipografia" title="Syne + DM Sans"
-        lead="Syne ExtraBold dá personalidade geométrica e um quê techie aos títulos e ao logo. DM Sans, leve e neutra, sustenta o corpo de texto com clareza. Tracking de 0.04em no display; entrelinha 1.7 no corpo." />
+        lead="Syne SemiBold dá personalidade geométrica e um quê techie aos títulos e ao logo. DM Sans, leve e neutra, sustenta o corpo de texto com clareza. Tracking de 0.04em no display; entrelinha 1.7 no corpo." />
       <div className="type-spec" style={{ marginTop: 44 }}>
         <div className="type-card type-card--dark">
           <div className="type-card__name" style={{ fontFamily: "var(--font-display)" }}>Aa</div>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, marginTop: 8 }}>Syne ExtraBold</div>
-          <div className="type-card__meta"><span>Display · Logo · Títulos</span><span>·</span><span>peso 400–800</span><span>·</span><span>tracking 0.04em</span></div>
-          <div className="type-card__row" style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>ABCDEFGHIJ</div>
-          <div className="type-card__row" style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>abcdefghij 0123</div>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, marginTop: 8 }}>Syne SemiBold</div>
+          <div className="type-card__meta"><span>Display · Logo · Títulos</span><span>·</span><span>peso 600 · SemiBold</span><span>·</span><span>tracking 0.04em</span></div>
+          <div className="type-card__row" style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}>ABCDEFGHIJ</div>
+          <div className="type-card__row" style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}>abcdefghij 0123</div>
         </div>
         <div className="type-card">
           <div className="type-card__name" style={{ fontFamily: "var(--font-body)", fontWeight: 500, color: "var(--ink-900)" }}>Aa</div>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, marginTop: 8 }}>DM Sans</div>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 24, marginTop: 8 }}>DM Sans</div>
           <div className="type-card__meta"><span>Corpo · UI · Interface</span><span>·</span><span>300 corpo / 500 ênfase</span><span>·</span><span>entrelinha 1.7</span></div>
           <div className="type-card__row" style={{ fontFamily: "var(--font-body)", fontWeight: 300, fontSize: 18 }}>A clareza vem da estrutura. A estrutura vem do método.</div>
           <div className="type-card__row" style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: 18 }}>Ênfase em peso 500 · PMP · Scrum · Agile</div>
@@ -196,7 +196,7 @@ function Icons() {
         <div className="glyph-big">›</div>
         <div>
           <Eye tone="onDark">O glifo expressivo</Eye>
-          <p style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 34, lineHeight: 1.15, margin: "12px 0 0", color: "#fff" }}>
+          <p style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 34, lineHeight: 1.15, margin: "12px 0 0", color: "#fff" }}>
             bora <span style={{ color: "var(--orange-500)" }}>→</span>
           </p>
           <p style={{ color: "var(--navy-200)", fontWeight: 300, fontSize: 16, marginTop: 12, maxWidth: 420 }}>
@@ -242,7 +242,7 @@ function Components() {
       <div style={{ marginTop: 28 }}>
         <Crd variant="feature" grain>
           <Eye>Clareza</Eye>
-          <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 26, margin: "10px 0 8px" }}>Card de destaque</h3>
+          <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 26, margin: "10px 0 8px" }}>Card de destaque</h3>
           <p style={{ fontWeight: 300, color: "var(--text-body)", lineHeight: 1.6, margin: 0 }}>
             O contêiner de trabalho da marca: fundo claro, hairline quente, sombra navy suave. A variação
             <b> feature</b> sobe um pouco mais; <b>dark</b> assenta no navy.
@@ -266,22 +266,22 @@ function MiniBanner() {
     <div className="app-banner">
       <div className="grainband" style={{ position: "relative", background: "var(--navy-700)", aspectRatio: "1584 / 396", overflow: "hidden", containerType: "inline-size" }}>
         {/* marca d'água */}
-        <div style={{ position: "absolute", right: "-2.5cqw", bottom: "-7cqw", zIndex: 0, fontFamily: "var(--font-display)", fontWeight: 800, letterSpacing: ".02em", fontSize: "24cqw", lineHeight: .8, color: "#fff", opacity: .05, whiteSpace: "nowrap" }}>BORA</div>
+        <div style={{ position: "absolute", right: "-2.5cqw", bottom: "-7cqw", zIndex: 0, fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: ".02em", fontSize: "24cqw", lineHeight: .8, color: "#fff", opacity: .05, whiteSpace: "nowrap" }}>BORA</div>
         {/* lockup topo-esquerda */}
         <div style={{ position: "absolute", top: "2.9cqw", left: "4cqw", zIndex: 3, display: "flex", alignItems: "center", gap: "1cqw" }}>
           <img src={M.white} alt="" style={{ width: "3.5cqw", height: "3.5cqw", objectFit: "contain" }} />
-          <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, letterSpacing: ".04em", fontSize: "2.5cqw", lineHeight: 1, color: "var(--text-on-dark)" }}>BORA</span>
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: ".04em", fontSize: "2.5cqw", lineHeight: 1, color: "var(--text-on-dark)" }}>BORA</span>
         </div>
         {/* headline à direita, centralizada na vertical */}
         <div style={{ position: "absolute", right: "4cqw", top: "50%", transform: "translateY(-50%)", textAlign: "right", zIndex: 3, maxWidth: "74cqw" }}>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, letterSpacing: ".01em", lineHeight: 1.08, fontSize: "3.15cqw", color: "var(--text-on-dark)" }}>
-            Gestão de projetos que<br/>funciona <b style={{ color: "var(--orange-500)", fontWeight: 800 }}>de verdade.</b>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: ".01em", lineHeight: 1.08, fontSize: "3.15cqw", color: "var(--text-on-dark)" }}>
+            Gestão de projetos que<br/>funciona <b style={{ color: "var(--orange-500)", fontWeight: 600 }}>de verdade.</b>
           </div>
         </div>
         {/* credenciais embaixo à direita */}
         <div style={{ position: "absolute", right: "4cqw", bottom: "2.8cqw", zIndex: 3, display: "flex", alignItems: "center", gap: "1.2cqw", fontFamily: "var(--font-body)", fontWeight: 500 }}>
           <span style={{ color: "var(--text-on-dark)", border: "1px solid rgba(255,255,255,.18)", borderRadius: 999, padding: ".5cqw 1.1cqw", fontSize: "1.01cqw", whiteSpace: "nowrap" }}>PMP · Scrum · Agile</span>
-          <span style={{ color: "var(--amber-500)", fontSize: "1.07cqw", display: "inline-flex", alignItems: "center", gap: ".5cqw" }}>borapm.com.br <span style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>›</span></span>
+          <span style={{ color: "var(--amber-500)", fontSize: "1.07cqw", display: "inline-flex", alignItems: "center", gap: ".5cqw" }}>boraprojetos.com <span style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}>›</span></span>
         </div>
       </div>
     </div>
@@ -303,7 +303,7 @@ function Applications() {
             <div className="mini-slide mini-slide--navy grainband">
               <div className="ms-eye">Método Bora</div>
               <div className="ms-h">Do caos <span style={{ color: "var(--orange-500)" }}>→</span> à entrega.</div>
-              <div className="ms-foot"><span>borapm.com.br</span><img className="ms-mark" src={M.white} alt="" /></div>
+              <div className="ms-foot"><span>boraprojetos.com</span><img className="ms-mark" src={M.white} alt="" /></div>
             </div>
             <div className="mini-slide mini-slide--cream">
               <div className="ms-eye">02 · Estrutura</div>
@@ -321,7 +321,7 @@ function Applications() {
               <div className="sig__name">Paula Balduino</div>
               <div className="sig__role">Comunicação & Marketing · Bora</div>
               <div className="sig__contact">
-                <b>borapm.com.br</b> · paula@borapm.com.br<br/>
+                <b>boraprojetos.com</b> · erico@boraprojetos.com<br/>
                 WhatsApp · (11) 9 9999-9999<br/>
                 Gestão de projetos · PMP · Scrum · Agile
               </div>
@@ -329,7 +329,7 @@ function Applications() {
           </div>
           <div style={{ marginTop: 16, padding: "18px 22px", background: "var(--navy-700)", borderRadius: "var(--radius-md)", display: "flex", alignItems: "center", gap: 16 }}>
             <img src={M.white} style={{ width: 40 }} alt="" />
-            <div style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 18 }}>Bora conversar <span style={{ color: "var(--amber-500)" }}>›</span></div>
+            <div style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 18 }}>Bora conversar <span style={{ color: "var(--amber-500)" }}>›</span></div>
           </div>
         </div>
       </div>
@@ -344,7 +344,7 @@ function Closing() {
       <div className="ghost-wm" style={{ fontSize: 360, left: -40, top: -60 }}>BORA</div>
       <img src={M.full} style={{ width: 76, marginBottom: 28 }} alt="" />
       <div className="closing__big">Bora<span className="accent">.</span></div>
-      <p className="closing__sub">Vamos resolver isso juntos. · borapm.com.br</p>
+      <p className="closing__sub">Vamos resolver isso juntos. · boraprojetos.com</p>
     </section>
   );
 }

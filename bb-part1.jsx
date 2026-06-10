@@ -119,14 +119,14 @@ function Brand() {
         <div style={{ display: "grid", gap: 16 }}>
           <div style={{ background: "var(--white)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: 30 }}>
             <Eyebrow>Missão</Eyebrow>
-            <p style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 26, lineHeight: 1.2, margin: "12px 0 0" }}>
+            <p style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 26, lineHeight: 1.2, margin: "12px 0 0" }}>
               Ajudar times a sair do caos <span style={{ color: "var(--orange-500)" }}>›</span> e entregar com consistência.
             </p>
           </div>
           <div className="kv" style={{ gridTemplateColumns: "1fr", gap: 0 }}>
             <div className="kv__row" style={{ borderColor: "var(--border-subtle)" }}><b>De</b> <span style={{ color: "var(--text-muted)" }}>I² · azul · corporativo</span></div>
             <div className="kv__row" style={{ borderColor: "var(--border-subtle)" }}><b>Para</b> <span style={{ color: "var(--orange-600)" }}>Bora · laranja · humano</span></div>
-            <div className="kv__row" style={{ borderColor: "var(--border-subtle)", borderBottom: 0 }}><b>Site</b> <span style={{ color: "var(--text-muted)" }}>borapm.com.br</span></div>
+            <div className="kv__row" style={{ borderColor: "var(--border-subtle)", borderBottom: 0 }}><b>Site</b> <span style={{ color: "var(--text-muted)" }}>boraprojetos.com</span></div>
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@ function Logo() {
         n="02"
         eyebrow="Logotipo"
         title="A marca Bora"
-        lead="O logotipo combina o B-mark — a letra B carregando uma seta amarela em forma de papel descolando, como um post-it que sobe — com o wordmark “Bora” redesenhado em Syne ExtraBold, a mesma tipografia de todas as artes. O B-mark é a versão principal e funciona sozinho."
+        lead="O logotipo combina o B-mark — a letra B carregando uma seta amarela em forma de papel descolando, como um post-it que sobe — com o wordmark “Bora” redesenhado em Syne SemiBold, a mesma tipografia de todas as artes. O B-mark é a versão principal e funciona sozinho."
       />
       <div className="logo-hero" style={{ marginTop: 44 }}>
         <img src={L.full} alt="Logotipo Bora completo" style={{ width: 480 }} />
@@ -170,7 +170,7 @@ function Versions() {
         n="03"
         eyebrow="Versões do logo"
         title="Nas cores da marca, com e sem fundo"
-        lead="O wordmark é definido em Syne ExtraBold. Use a versão colorida sempre que possível. Sobre fundos cheios, recorra ao monocromático (navy, laranja ou branco knockout) para máxima legibilidade. Todas as versões existem com fundo transparente."
+        lead="O wordmark é definido em Syne SemiBold. Use a versão colorida sempre que possível. Sobre fundos cheios, recorra ao monocromático (navy, laranja ou branco knockout) para máxima legibilidade. Todas as versões existem com fundo transparente."
       />
 
       <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, margin: "44px 0 18px" }}>Logotipo completo</h3>

@@ -52,7 +52,7 @@
         '<div class="pg__title" contenteditable="true" spellcheck="false"></div>' +
         '<div class="pg__sub" contenteditable="true" spellcheck="false"></div>' +
       '</div>' +
-      '<div class="pg__foot"><span class="site">borapm.com.br</span><span class="cta">Bora conversar <b>›</b></span></div>';
+      '<div class="pg__foot"><span class="site">boraprojetos.com</span><span class="cta">Bora conversar <b>›</b></span></div>';
 
     pg.querySelector(".pg__title").textContent = title;
     pg.querySelector(".pg__sub").textContent = sub;
@@ -171,7 +171,7 @@
       drawGrain(0, 0, W, H);
       // lockup
       if (markImg && markImg.complete) x.drawImage(markImg, PAD, 92, 74, 74);
-      x.font = "800 46px Syne"; x.textAlign = "left"; x.textBaseline = "middle"; x.fillStyle = cfg.fg; LSp(x, "2px"); x.fillText("BORA", PAD+90, 132); LSp(x, "0px");
+      x.font = "600 46px Syne"; x.textAlign = "left"; x.textBaseline = "middle"; x.fillStyle = cfg.fg; LSp(x, "2px"); x.fillText("BORA", PAD+90, 132); LSp(x, "0px");
       // bar + tag
       x.fillStyle = cfg.accent; x.fillRect(PAD, 384, 56, 5);
       x.font = "500 25px 'DM Sans'"; x.textBaseline = "top"; LSp(x, "4px"); x.fillStyle = cfg.accent; x.fillText(tag, PAD, 406); LSp(x, "0px");
@@ -179,13 +179,13 @@
       const subSize = 34, subLh = Math.round(subSize*1.4);
       x.font = `400 ${subSize}px 'DM Sans'`; const subLines = wrap(x, sub, maxW);
       let fs = 82, titleLines, lh;
-      while (fs > 28) { x.font = `800 ${fs}px Syne`; LSp(x, "0.5px"); titleLines = wrap(x, title, maxW); lh = Math.round(fs*1.05); LSp(x, "0px"); if (470 + titleLines.length*lh + 26 + subLines.length*subLh <= 946) break; fs -= 2; }
-      x.font = `800 ${fs}px Syne`; x.fillStyle = cfg.fg; x.textBaseline = "top"; LSp(x, "0.5px");
+      while (fs > 28) { x.font = `600 ${fs}px Syne`; LSp(x, "0.5px"); titleLines = wrap(x, title, maxW); lh = Math.round(fs*1.05); LSp(x, "0px"); if (470 + titleLines.length*lh + 26 + subLines.length*subLh <= 946) break; fs -= 2; }
+      x.font = `600 ${fs}px Syne`; x.fillStyle = cfg.fg; x.textBaseline = "top"; LSp(x, "0.5px");
       let y = 470; titleLines.forEach((l) => { x.fillText(l, PAD, y); y += lh; }); LSp(x, "0px");
       y += 26; x.font = `400 ${subSize}px 'DM Sans'`; x.fillStyle = cfg.muted; subLines.forEach((l) => { x.fillText(l, PAD, y); y += subLh; });
       // footer
-      x.font = "500 27px 'DM Sans'"; x.textBaseline = "alphabetic"; x.fillStyle = cfg.muted; x.textAlign = "left"; x.fillText("borapm.com.br", PAD, H-92);
-      x.fillStyle = cfg.accent; x.textAlign = "right"; x.fillText("Bora conversar", W-PAD-26, H-92); x.font = "800 27px Syne"; x.fillText("›", W-PAD, H-92); x.textAlign = "left";
+      x.font = "500 27px 'DM Sans'"; x.textBaseline = "alphabetic"; x.fillStyle = cfg.muted; x.textAlign = "left"; x.fillText("boraprojetos.com", PAD, H-92);
+      x.fillStyle = cfg.accent; x.textAlign = "right"; x.fillText("Bora conversar", W-PAD-26, H-92); x.font = "600 27px Syne"; x.fillText("›", W-PAD, H-92); x.textAlign = "left";
     } else {
       const IMGH = 520;
       // image zone
@@ -206,19 +206,19 @@
       // pill lockup
       x.fillStyle = cfg.bg; rrect(x, 72, 42, 266, 72, 999); x.fill();
       if (markImg && markImg.complete) x.drawImage(markImg, 88, 52, 52, 52);
-      x.font = "800 36px Syne"; x.textBaseline = "middle"; x.fillStyle = cfg.fg; LSp(x, "2px"); x.fillText("BORA", 152, 80); LSp(x, "0px");
+      x.font = "600 36px Syne"; x.textBaseline = "middle"; x.fillStyle = cfg.fg; LSp(x, "2px"); x.fillText("BORA", 152, 80); LSp(x, "0px");
       // body
       x.fillStyle = cfg.accent; x.fillRect(PAD, 572, 48, 5);
       x.font = "500 24px 'DM Sans'"; x.textBaseline = "top"; LSp(x, "4px"); x.fillStyle = cfg.accent; x.fillText(tag, PAD, 595); LSp(x, "0px");
       const subSize = 30, subLh = Math.round(subSize*1.4);
       x.font = `400 ${subSize}px 'DM Sans'`; const subLines = wrap(x, sub, maxW);
       let fs = 60, titleLines, lh;
-      while (fs > 26) { x.font = `800 ${fs}px Syne`; LSp(x, "0.5px"); titleLines = wrap(x, title, maxW); lh = Math.round(fs*1.06); LSp(x, "0px"); if (639 + titleLines.length*lh + 18 + subLines.length*subLh <= 980) break; fs -= 2; }
-      x.font = `800 ${fs}px Syne`; x.fillStyle = cfg.fg; x.textBaseline = "top"; LSp(x, "0.5px");
+      while (fs > 26) { x.font = `600 ${fs}px Syne`; LSp(x, "0.5px"); titleLines = wrap(x, title, maxW); lh = Math.round(fs*1.06); LSp(x, "0px"); if (639 + titleLines.length*lh + 18 + subLines.length*subLh <= 980) break; fs -= 2; }
+      x.font = `600 ${fs}px Syne`; x.fillStyle = cfg.fg; x.textBaseline = "top"; LSp(x, "0.5px");
       let y = 639; titleLines.forEach((l) => { x.fillText(l, PAD, y); y += lh; }); LSp(x, "0px");
       y += 18; x.font = `400 ${subSize}px 'DM Sans'`; x.fillStyle = cfg.muted; subLines.forEach((l) => { x.fillText(l, PAD, y); y += subLh; });
-      x.font = "500 25px 'DM Sans'"; x.textBaseline = "alphabetic"; x.fillStyle = cfg.muted; x.textAlign = "left"; x.fillText("borapm.com.br", PAD, H-64);
-      x.fillStyle = cfg.accent; x.textAlign = "right"; x.fillText("Bora conversar", W-PAD-24, H-64); x.font = "800 25px Syne"; x.fillText("›", W-PAD, H-64); x.textAlign = "left";
+      x.font = "500 25px 'DM Sans'"; x.textBaseline = "alphabetic"; x.fillStyle = cfg.muted; x.textAlign = "left"; x.fillText("boraprojetos.com", PAD, H-64);
+      x.fillStyle = cfg.accent; x.textAlign = "right"; x.fillText("Bora conversar", W-PAD-24, H-64); x.font = "600 25px Syne"; x.fillText("›", W-PAD, H-64); x.textAlign = "left";
     }
     return type === "jpeg" ? cv.toDataURL("image/jpeg", 0.95) : cv.toDataURL("image/png");
   }

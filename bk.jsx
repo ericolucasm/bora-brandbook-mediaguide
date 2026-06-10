@@ -11,6 +11,41 @@ const DLIcon = () => (
   </svg>
 );
 
+/* Force a real download even when the file is served cross-origin
+   (browsers ignore the native `download` attr across origins, and just
+   open the image in a new tab instead). We fetch → blob → object URL. */
+async function forceDownload(href, filename) {
+  try {
+    const res = await fetch(href, { mode: "cors" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename || (href.split("/").pop() || "download");
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+    return true;
+  } catch (e) {
+    // Last resort: open in a new tab so the user can still save it manually.
+    window.open(href, "_blank", "noopener");
+    return false;
+  }
+}
+
+/* Delegated handler: any anchor tagged data-dl downloads via blob. */
+if (typeof window !== "undefined" && !window.__boraDlBound) {
+  window.__boraDlBound = true;
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-dl]");
+    if (!a) return;
+    e.preventDefault();
+    forceDownload(a.getAttribute("href"), a.getAttribute("download") || undefined);
+  });
+}
+
 /* one downloadable asset tile */
 function Asset({ src, stage, name, fmt, href, imgStyle }) {
   return (
@@ -23,7 +58,7 @@ function Asset({ src, stage, name, fmt, href, imgStyle }) {
           <div className="asset__name">{name}</div>
           <div className="asset__fmt">{fmt}</div>
         </div>
-        <a className="dl" href={href} download><DLIcon /> Baixar</a>
+        <a className="dl" href={href} download data-dl><DLIcon /> Baixar</a>
       </div>
     </div>
   );
@@ -49,7 +84,7 @@ function LogoSection() {
     <section className="kit" id="logo">
       <div className="wrap">
         <SectionHead n="01" eyebrow="Logotipo" title="Logo, agora em Syne"
-          lead="O wordmark foi redesenhado na tipografia da marca — Syne ExtraBold, a mesma de todas as artes. A marca (o B-mark) é a versão principal e funciona sozinha; o lockup com texto entra quando há espaço." />
+          lead="O wordmark foi redesenhado na tipografia da marca — Syne SemiBold, a mesma de todas as artes. A marca (o B-mark) é a versão principal e funciona sozinha; o lockup com texto entra quando há espaço." />
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 28 }}>
           <KTag>PNG transparente</KTag><KTag>300+ dpi</KTag><KTag>Cor · Navy · Branco · Laranja</KTag>
@@ -91,7 +126,7 @@ function FaviconSection() {
           lead="A marca em tamanhos prontos: favicons transparentes para o site e ícones de cantos arredondados sobre navy para iOS/Android e PWA." />
 
         <div className="fav-mock" style={{ marginBottom: 32 }}>
-          <div className="fav-tab"><img src={F+"favicon-32.png"} alt="" /> borapm.com.br</div>
+          <div className="fav-tab"><img src={F+"favicon-32.png"} alt="" /> boraprojetos.com</div>
         </div>
 
         <div className="grid g4">
@@ -121,7 +156,7 @@ function IconsSection() {
           lead="Conjunto outline de traço 1.5–2px que combina com Syne e DM Sans. A seta é o glifo da marca. Clique para baixar o SVG (recolorível via currentColor)." />
         <div className="icons-grid">
           {ICON_NAMES.map((n) => (
-            <a className="icon-cell" key={n} href={I+n+".svg"} download>
+            <a className="icon-cell" key={n} href={I+n+".svg"} download data-dl>
               <span className="icon-cell__dl">SVG ↓</span>
               <img src={I+n+".svg"} alt={n} />
               <span>{n}</span>
@@ -154,7 +189,7 @@ function AppSection() {
           <img src={S+"linkedin-banner-1584x396.png"} alt="Banner LinkedIn Bora" />
         </div>
         <div style={{ marginTop: 14 }}>
-          <a className="dl" href={S+"linkedin-banner-1584x396.png"} download><DLIcon/> Baixar banner (PNG)</a>
+          <a className="dl" href={S+"linkedin-banner-1584x396.png"} download data-dl><DLIcon/> Baixar banner (PNG)</a>
         </div>
 
         {/* Modelos de post, por pilar */}
@@ -193,10 +228,10 @@ function AppSection() {
                 <img className="sig-mark" src={KIT+"logo/bora-mark-color.png"} alt="Bora" />
                 <div className="sig-div"></div>
                 <div>
-                  <div className="sig-name">Paula Balduino</div>
-                  <div className="sig-role">Comunicação &amp; Marketing · Bora</div>
+                  <div className="sig-name">Érico</div>
+                  <div className="sig-role">Gestão de Projetos · Bora</div>
                   <div className="sig-contact">
-                    <b>borapm.com.br</b> · paula@borapm.com.br<br/>
+                    <b>boraprojetos.com</b> · erico@boraprojetos.com<br/>
                     WhatsApp · (11) 9 9999-9999<br/>
                     Gestão de projetos · PMP · Scrum · Agile
                   </div>
@@ -208,11 +243,21 @@ function AppSection() {
           <div className="asset__bar">
             <div className="asset__meta">
               <div className="asset__name">Assinatura HTML</div>
-              <div className="asset__fmt">marca embutida · cole no Gmail/Outlook</div>
+              <div className="asset__fmt">logo por URL · leve · ideal p/ Gmail</div>
             </div>
-            <a className="dl" href={E+"assinatura-bora.html"} download><DLIcon/> Baixar HTML</a>
+            <a className="dl" href={E+"assinatura-bora.html"} download data-dl><DLIcon/> Baixar HTML</a>
+          </div>
+          <div className="asset__bar" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+            <div className="asset__meta">
+              <div className="asset__name">Assinatura · só texto</div>
+              <div className="asset__fmt">sem imagem · funciona em qualquer cliente</div>
+            </div>
+            <a className="dl" href={E+"assinatura-bora-simples.html"} download data-dl><DLIcon/> Baixar HTML</a>
           </div>
         </div>
+        <p className="note" style={{ marginTop: 14, maxWidth: 640 }}>
+          O Gmail não aceita imagem embutida na assinatura — por isso a versão com logo aponta para a <b>URL pública</b> do logo (já configurada para o repositório no GitHub Pages). Se preferir não depender de imagem hospedada, use a versão <b>só texto</b>.
+        </p>
       </div>
     </section>
   );
@@ -291,7 +336,7 @@ function BrandKit() {
       <footer className="kit-foot">
         <div className="wrap">
           <div className="big">Bora<span className="dot">.</span></div>
-          <p>Vamos resolver isso juntos. · borapm.com.br</p>
+          <p>Vamos resolver isso juntos. · boraprojetos.com</p>
         </div>
       </footer>
     </div>
